@@ -1,7 +1,8 @@
-# Grade Calculator
+# React + Vite
 
-Tired of manually calculating your final grade for your class?
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Well then, this app is does it for you! With the help of NextJS!
+Currently, two official plugins are available:
 
-This app will be on the web soon!
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
