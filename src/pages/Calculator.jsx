@@ -37,7 +37,9 @@ export default function Calculator() {
         e.preventDefault();
         let sumWeights = 0;
         for (let i = 0; i < weights.length; i++) {
-            if (!weights[0].val.current.value) break;
+            if (!weights[0].val.current.value) {
+                weights[0].val.current = 0;
+            };
             const toParse = parseInt(weights[i].val.current.value)
             if (toParse) {
                 sumWeights += toParse;
@@ -50,17 +52,24 @@ export default function Calculator() {
         } else {
             let finals = [];
             for (let i = 0; i < grades.length; i++) {
-                let val = grades[i].val.current.value
+                let current = grades[i].val.current
+                let val = current.value
                 let splitNum = val.split("/")
                 let firstNumber = parseFloat(splitNum[0])
                 let secondNumber = parseInt(splitNum[1])
                 let currentWeight = parseInt(weights[i].val.current.value)
                 // Checks if there is no current grade value then breaks loop to calculate
                 if (val === "") {
-                    break;
+                    current = "1/1"
+                    val = current.value
+                    splitNum = val.split("/")
+                    firstNumber = parseFloat(splitNum[0])
+                    secondNumber = parseInt(splitNum[1])
+                    currentWeight = parseInt(weights[i].val.current.value)
                 }
                 // Checks if the length of splitted number is 2, which means two numbers at the left of '/' and vice versa
                 if (splitNum.length < 2) {
+                    console.log(splitNum);
                     setErrorMessage("Scores should be entered like '28/30'")
                     setError(true)
                     return;
@@ -145,12 +154,12 @@ export default function Calculator() {
                                 <div className="w-1/2 flex flex-col gap-2 items-center justify-center">
                                     <h1>Scores</h1>
                                     <h2>eg. 68/100</h2>
-                                    {grades.map(grade => <input type="text" key={grade.id} ref={grade.val} placeholder={grade.id === "1g" ? '20/30' : ''} required={grade.id === "1g" ? true : false} className="text-black text-center w-2/3 rounded-sm p-0.5" />)}
+                                    {grades.map(grade => <input type="text" key={grade.id} ref={grade.val} placeholder={grade.id === "1g" ? '20/30' : ''} className="text-black text-center w-2/3 rounded-sm p-0.5" />)}
                                 </div>
                                 <div className="w-1/2 flex flex-col gap-2 items-center justify-center">
                                     <h1>Weights</h1>
                                     <h2>eg. 20</h2>
-                                    {weights.map(weight => <input type="text" key={weight.id} ref={weight.val} placeholder={weight.id === "1w" ? '40' : ''} required={weight.id === "1w" ? true : false} className="text-black text-center w-2/3 rounded-sm p-0.5" />)}
+                                    {weights.map(weight => <input type="text" key={weight.id} ref={weight.val} placeholder={weight.id === "1w" ? '40' : ''} className="text-black text-center w-2/3 rounded-sm p-0.5" />)}
                                 </div>
                             </div>
                             <div>

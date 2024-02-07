@@ -12,8 +12,8 @@ const firebaseConfig = {
   projectId: "arens4gun2",
   storageBucket: "arens4gun2.appspot.com",
   messagingSenderId: "890362268601",
-  appId: "1:890362268601:web:3baadc3f68046cbce44468",
-  measurementId: "G-E83H1MF3RT"
+  appId: "1:890362268601:web:d88d9e9259dfd1b0e44468",
+  measurementId: "G-H4EKREHKK4"
 };
 
 // Initialize Firebase

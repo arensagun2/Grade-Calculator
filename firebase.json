@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "arensagun2-gradingcalculator",
+    "site": "finalgradecalculator",
     "source": ".",
     "ignore": [
       "firebase.json",
