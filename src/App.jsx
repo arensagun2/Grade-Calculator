@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='p-2 flex flex-col items-center justify-center flex-wrap h-full'>
       <Router>
-        <header className='w-36 bg-slate-200 rounded-md shadow-lg'>
+        <header className='w-24 bg-slate-200 rounded-md shadow-lg'>
           <Navigation />
         </header>
         <AnimatedRoutes />
