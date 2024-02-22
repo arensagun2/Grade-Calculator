@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "finalgradecalculator",
     "source": ".",
     "ignore": [
       "firebase.json",

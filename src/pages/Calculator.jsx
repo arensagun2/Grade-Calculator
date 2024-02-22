@@ -104,10 +104,10 @@ export default function Calculator() {
             >
                 <h1 className="text-2xl">Calculator</h1>
 
-                <div className="bg-slate-200 p-4 rounded-md mb-2">
+                <div className="bg-slate-200 p-4 rounded-md mb-2 w-4/5">
                     <div>
                         {rows.length > 0 ? rows.map((row) => {
-                            return  <div key={row.num} className="flex justify-evenly w-50 bg-slate-300 rounded-md mb-2 relative hover:scale-105 hover:cursor-pointer transition-all">
+                            return  <div key={row.num} className="flex justify-evenly bg-slate-300 rounded-md mb-2 relative hover:scale-105 hover:cursor-pointer transition-all">
                                         <h1 className="p-1 w-1/3 text-center">{row.score}</h1>
                                         <h1 className="p-1 w-1/3 text-center">{row.weight}</h1>
                                     </div>
@@ -118,9 +118,9 @@ export default function Calculator() {
 
                     <div className="flex justify-center items-center gap-2 mt-2 mb-2">
                         <label htmlFor="score">Score</label>
-                        <input id="score" className="w-40 rounded-md text-center" value={score} type="text" ref={scoreRef} placeholder="4/5" onChange={updateScore}/>
+                        <input id="score" className="w-1/2 rounded-md text-center" value={score} type="text" ref={scoreRef} placeholder="4/5" onChange={updateScore}/>
                         
-                        <input id="weight" className="w-40 rounded-md text-center" value={weight} type="number" ref={weightRef} placeholder="20" onChange={updateWeight}/>
+                        <input id="weight" className="w-1/2 rounded-md text-center" value={weight} type="number" ref={weightRef} placeholder="20" onChange={updateWeight}/>
                         <label htmlFor="weight">Weight</label>
                     </div>
                     
