@@ -65,12 +65,15 @@ export default function Calculator() {
 
     // Removes latest row
     const removeRow = () => {
-        const row = rows[rows.length - 1];
-        settotalweight(totalweight - parseFloat(row.weight))
-        const poppedArray = rows.slice(0, -1);
-        setrows(poppedArray);
-        if (final) {
-            setfinal(null);
+        if (rows.length > 0) {
+            const row = rows[rows.length - 1];
+            settotalweight(totalweight - parseFloat(row.weight))
+            seterror('');
+            const poppedArray = rows.slice(0, -1);
+            setrows(poppedArray);
+            if (final) {
+                setfinal(null);
+            }
         }
     }
 
@@ -104,7 +107,7 @@ export default function Calculator() {
             >
                 <h1 className="text-2xl">Calculator</h1>
 
-                <div className="bg-slate-200 p-4 rounded-md mb-2 w-4/5">
+                <div className="bg-slate-200 p-4 rounded-md max-w-96 mb-2 w-4/5 shadow-lg hover:scale-105 transition-all">
                     <div>
                         {rows.length > 0 ? rows.map((row) => {
                             return  <div key={row.num} className="flex justify-evenly bg-slate-300 rounded-md mb-2 relative hover:scale-105 hover:cursor-pointer transition-all">
@@ -116,7 +119,7 @@ export default function Calculator() {
 
                     {error ? <h1 className="text-red-500 text-center">Error: {error}</h1>: <h1></h1>}
 
-                    <div className="flex justify-center items-center gap-2 mt-2 mb-2">
+                    <div className="flex justify-center items-center gap-2 mt-2 mb-4">
                         <label htmlFor="score">Score</label>
                         <input id="score" className="w-1/2 rounded-md text-center" value={score} type="text" ref={scoreRef} placeholder="4/5" onChange={updateScore}/>
                         
