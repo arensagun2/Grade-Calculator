@@ -107,7 +107,7 @@ export default function Calculator() {
                 <div className="bg-slate-200 p-4 rounded-md mb-2 w-4/5">
                     <div>
                         {rows.length > 0 ? rows.map((row) => {
-                            return  <div key={row.num} className="flex justify-evenly bg-slate-300 rounded-md mb-2 relative hover:scale-105 hover:cursor-pointer transition-all">
+                            return  <div key={row.num} className="flex justify-evenly bg-slate-300 rounded-md mb-2 relative hover:scale-105">
                                         <h1 className="p-1 w-1/3 text-center">{row.score}</h1>
                                         <h1 className="p-1 w-1/3 text-center">{row.weight}</h1>
                                     </div>
