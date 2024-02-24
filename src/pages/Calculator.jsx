@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState } from "react";
 
 import { Calculate } from "../functions/calculate";
+import { getLetterGrade } from "../functions/ajps-util";
 
 export default function Calculator() {
     const scoreRef = useRef();
@@ -107,7 +108,7 @@ export default function Calculator() {
             >
                 <h1 className="text-2xl">Calculator</h1>
 
-                <div className="bg-slate-200 p-4 rounded-md max-w-96 mb-2 w-4/5 shadow-lg hover:scale-105 transition-all">
+                <div className="bg-slate-200 p-4 rounded-md max-w-96 mb-2 w-4/5 shadow-lg">
                     <div>
                         {rows.length > 0 ? rows.map((row) => {
                             return  <div key={row.num} className="flex justify-evenly bg-slate-300 rounded-md mb-2 relative hover:scale-105">
@@ -136,9 +137,9 @@ export default function Calculator() {
                 </div>
 
                 {final != null ? 
-                    <div className="bg-slate-200 p-4 rounded-md flex items-center justify-center flex-col">
+                    <div className="bg-slate-200 p-4 rounded-md flex items-center justify-center flex-col shadow-lg">
                         <h1><strong>Results</strong></h1>
-                        <h2>{final}/100</h2>
+                        <h2>{final}/100 | {getLetterGrade(final)}</h2>
                     </div> : <div></div>
                 }
                 
