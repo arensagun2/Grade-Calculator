@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Calculate } from "../functions/calculate";
 import { getLetterGrade } from "../functions/ajps-util";
 
+// Calculate Page
 export default function Calculator() {
     const scoreRef = useRef();
     const weightRef = useRef();
@@ -111,7 +112,7 @@ export default function Calculator() {
                 <div className="bg-slate-200 p-4 rounded-md max-w-96 mb-2 w-4/5 shadow-lg">
                     <div>
                         {rows.length > 0 ? rows.map((row) => {
-                            return  <div key={row.num} className="flex justify-evenly bg-slate-300 rounded-md mb-2 relative hover:scale-105">
+                            return  <div key={row.num} className="flex justify-evenly bg-slate-300 rounded-md mb-2 relative hover:scale-105 transition-all">
                                         <h1 className="p-1 w-1/3 text-center">{row.score}</h1>
                                         <h1 className="p-1 w-1/3 text-center">{row.weight}</h1>
                                     </div>
@@ -129,10 +130,10 @@ export default function Calculator() {
                     </div>
                     
                     <div className="flex justify-center gap-2 align-middle rounded-md">
-                        <button className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={updateRow}><span className="material-symbols-outlined">add</span></button>
-                        <button className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={removeRow}><span className="material-symbols-outlined">remove</span></button>
-                        <button className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={clear}><span className="material-symbols-outlined">cancel</span></button>
-                        <button className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={calculate}><span className="material-symbols-outlined">calculate</span></button>
+                        <button title="Add row" className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={updateRow}><span className="material-symbols-outlined">add</span></button>
+                        <button title="Delete row" className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={removeRow}><span className="material-symbols-outlined">remove</span></button>
+                        <button title="Clear" className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={clear}><span className="material-symbols-outlined">cancel</span></button>
+                        <button title="Calculate" className="bg-blue-400 p-1 rounded-md justify-center align-middle flex hover:scale-110 hover:cursor-pointer transition-all" onClick={calculate}><span className="material-symbols-outlined">calculate</span></button>
                     </div>
                 </div>
 
