@@ -55,6 +55,9 @@ export default function Home() {
                     </button>
                     <p>{likes}</p>
                 </div>
+                <div className="w-48 hover:scale-105 transition-all">
+                    <a href='https://ko-fi.com/T6T8UYMEE' target='_blank' rel="noreferrer"><img height='36' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+                </div>
             </motion.div>
         </AnimatePresence>
     )
