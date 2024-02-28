@@ -18,4 +18,4 @@ This calculator app will calculate your final grade for your class, with the sco
 
 ## Live Site
 
-https://finalgradecalculator.web.app/calculator
+https://finalgradecalculator.web.app
